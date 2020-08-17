@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!-- For DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    
+<script src="/socket.io/socket.io.js"></script>
+
+<style>
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    
+    #messagepage {
+      /* The image used */
+      background-image: url("/minion2.jpg");
+    
+      /* Full height */
+      height: 100%; 
+    
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #entirechat{
+    background: crimson;
+    opacity: .75;
+    padding: 20px;
+    }
+
+    </style>
+</head>
+<body style="background-color: rgb(31, 108, 121);">
+    <div class="container" id="homepage">
+    <img height="mx-auto" width="850px" class="mx-auto rounded-circle" src="/minion.jpg"/>
+        <div  style="vertical-align: middle;">
+            <div class="row">
+                <form class="col-6" id="mynickname">
+                    <div class="form-group">
+                    <label for="nicknametext"><b><i style="color: black;">Please Enter your Nickname</i></label>
+                    <input type="text" class="form-control" id="nicknametext" placeholder="Enter Nickname">
+                    </div>
+                    <div id="invalidnickname">
+
+                    </div>
+                    <button type="submit" class="btn btn-danger">
+                        Start chat!
+                    </button>
+                </form>   
+            </div>
+        </div>
+    </div>
+    <div id="messagepage">
+        <div class='container'>
+            <div class="row">
+                    <div class="col-sm">
+                    </div>
+                    <div class="col-sm-7" id="entirechat" style="background-color: crimson; height: 500px;">
+                        <div id="messagebox" style="height:450px; width: 650px; overflow-y: scroll;">
+                        </div> 
+                    </div>
+                    <div class="col-sm">
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                </div>
+                <div class="col-sm-7">
+                    <form id="mymessageform">
+                            <input type="text" class="form-control" id="messagetext" placeholder="Enter your message here"/>
+                    </form> 
+                </div>
+                <div class="col-sm">
+                </div> 
+            </div>
+        </div>
+     </div>
+
+      
+</body>
+<script type="text/javascript" src="../js/socket.js"></script>
+
+</html>
